@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">ToDoList</string>
-
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">To Do List</string>
     <string name="action_settings">Settings</string>
+    <string name="sample_list_item_text">Sample list item</string>
 </resources>
