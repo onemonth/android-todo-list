@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">To Do List</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_delete">Delete</string>
     <string name="action_save">Save</string>
     <string name="add_item_name">Add Item</string>
-    <string name="activity_add_item_hint">Add a new to do list item</string>
+    <string name="activity_add_item_hint">Add a new item</string>
 </resources>

@@ -33,6 +33,12 @@ public class StringAdapter extends ArrayAdapter<String>
         notifyDataSetChanged();
     }
 
+    public void removeItem(@NonNull int position)
+    {
+        mItems.remove(position);
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getCount()
     {
