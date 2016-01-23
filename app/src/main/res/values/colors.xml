@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="floatingactionbutton">#00ADEF</color>
+    <color name="floatingactionbutton_dark">#0087CF</color>
+</resources>

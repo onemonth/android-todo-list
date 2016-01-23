@@ -6,12 +6,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
+import android.support.design.widget.FloatingActionButton;
 
 
 public class MainActivity extends Activity
 {
     private ListView mListView;
     private StringAdapter mAdapter;
+    private FloatingActionButton mFloatingActionButton;
+    private View.OnClickListener mFabOnClickListener = new View.OnClickListener()
+    {
+        @Override
+        public void onClick(View v) 
+        {
+            mAdapter.addItem("Walk the cat");
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -24,7 +34,8 @@ public class MainActivity extends Activity
         mAdapter = new StringAdapter(this, R.id.list_item_textview);
         mListView.setAdapter(mAdapter);
 
-        mAdapter.addItem("Scoop the cat litter");
+        mFloatingActionButton = (FloatingActionButton) findViewById(R.id.activity_main_floatingactionbutton);
+        mFloatingActionButton.setOnClickListener(mFabOnClickListener);
     }
 
     @Override
@@ -39,8 +50,6 @@ public class MainActivity extends Activity
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        mAdapter.addItem("Walk the cat");
-
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
