@@ -7,21 +7,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.support.design.widget.FloatingActionButton;
-
+import android.content.Intent;
 
 public class MainActivity extends Activity
 {
-    private ListView mListView;
     private StringAdapter mAdapter;
-    private FloatingActionButton mFloatingActionButton;
-    private View.OnClickListener mFabOnClickListener = new View.OnClickListener()
-    {
-        @Override
-        public void onClick(View v) 
-        {
-            mAdapter.addItem("Walk the cat");
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -30,12 +20,21 @@ public class MainActivity extends Activity
 
         setContentView(R.layout.activity_main);
 
-        mListView = (ListView) findViewById(R.id.activity_main_listview);
         mAdapter = new StringAdapter(this, R.id.list_item_textview);
-        mListView.setAdapter(mAdapter);
 
-        mFloatingActionButton = (FloatingActionButton) findViewById(R.id.activity_main_floatingactionbutton);
-        mFloatingActionButton.setOnClickListener(mFabOnClickListener);
+        ListView listView = (ListView) findViewById(R.id.activity_main_listview);
+        listView.setAdapter(mAdapter);
+
+        FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.activity_main_floatingactionbutton);
+        View.OnClickListener fabOnClickListener = new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startAddItemActivity();
+            }
+        };
+        floatingActionButton.setOnClickListener(fabOnClickListener);
     }
 
     @Override
@@ -62,5 +61,25 @@ public class MainActivity extends Activity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == Constants.ADD_ITEM_REQUEST_CODE)
+        {
+            if (resultCode == RESULT_OK)
+            {
+                String item = data.getStringExtra(Constants.ADD_ITEM_RESULT_KEY);
+                mAdapter.addItem(item);
+            }
+        }
+    }
+
+    private void startAddItemActivity()
+    {
+        Intent intent = new Intent(this, AddItemActivity.class);
+        startActivityForResult(intent, Constants.ADD_ITEM_REQUEST_CODE);
     }
 }

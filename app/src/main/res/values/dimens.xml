@@ -8,4 +8,6 @@
     <dimen name="fab_elevation">6dp</dimen>
     <dimen name="fab_pressed_z_translation">12dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="activity_add_item_horizontal_margin">14dp</dimen>
+    <dimen name="activity_add_item_vertical_margin">17dp</dimen>
 </resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/activity_add_item_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/activity_add_item_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_add_item_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_add_item_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_add_item_vertical_margin"
+        android:background="@null"
+        android:gravity="top"
+        android:hint="@string/activity_add_item_hint"
+        android:inputType="textMultiLine"
+        android:isScrollContainer="true"
+        android:textColorHint="@color/edittext_hint"/>
+
+</LinearLayout>

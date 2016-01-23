@@ -2,4 +2,5 @@
 <resources>
     <color name="floatingactionbutton">#00ADEF</color>
     <color name="floatingactionbutton_dark">#0087CF</color>
+    <color name="edittext_hint">#DDDDDD</color>
 </resources>

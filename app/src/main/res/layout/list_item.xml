@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="top|start"
         android:textSize="@dimen/list_item_text_size"
-        android:text="@string/sample_list_item_text"
         android:maxLines="1"
         android:ellipsize="end"
         android:typeface="sans"/>
