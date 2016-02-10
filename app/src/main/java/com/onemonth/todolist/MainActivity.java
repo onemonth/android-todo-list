@@ -13,6 +13,14 @@ import android.widget.AdapterView;
 
 public class MainActivity extends Activity
 {
+    /*
+
+    Add edit functionality to the long press menu
+    Add check boxes
+    Add plus icon to FAB
+    App icon
+
+     */
     private StringAdapter mAdapter;
 
     @Override
